@@ -1,10 +1,11 @@
-const toggleSidebar = document.getElementById("toggleSidebar");
-const sidebar = document.querySelector(".sidebar")
-
 export function sidebarToggle() {
-   sidebar.classList.toggle("show");
+  const sidebar = document.getElementById("sidebarContainer");
+  sidebar.classList.toggle("show");
+}
+export function attachSidebarToggle() {
+  const toggleBtn = document.getElementById("toggleSidebar");
+  if (!toggleBtn) return;
+
+  toggleBtn.addEventListener("click", sidebarToggle);
 }
 
- toggleSidebar.addEventListener("click", () => {
-   sidebarToggle()
- });

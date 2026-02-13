@@ -107,27 +107,20 @@ const sections = {
   `,
 };
 
-function loadSection(section) {
+export function loadSection(section) {
   const content = document.getElementById("dashboardContent");
   content.innerHTML = sections[section] || "<p>Section not found.</p>";
 }
-document
-  .getElementById("myTasksBtn")
-  .addEventListener("click", () => {
-   loadSection("myTasks");
-sidebarToggle();
-  })
-document.getElementById("allTasksBtn").addEventListener("click", () => {
-  loadSection("allTasks");
-  sidebarToggle();
-});
-document.getElementById("membersBtn").addEventListener("click", () => {
-  loadSection("members");
-  sidebarToggle();
-});
-document.getElementById("activityBtn").addEventListener("click", () => {
-  loadSection("activity");
-  sidebarToggle();
-});
+
+export function attachSidebarEvents() {
+  document.querySelectorAll(".navBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const section = btn.dataset.section;
+      loadSection(section);
+      sidebarToggle();
+    });
+  });
+}
 
 loadSection("myTasks");
+

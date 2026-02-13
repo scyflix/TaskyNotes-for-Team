@@ -1,5 +1,5 @@
 /* GLOBAL SCROLLBAR */
-.mainContent {
+* {
   scrollbar-width: thin;
   scrollbar-color: var(--primary) var(--card-bg);
 }
@@ -77,3 +77,4 @@
       display: none;
    }
 }
+

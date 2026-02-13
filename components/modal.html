@@ -1,0 +1,30 @@
+<!--CREATE TASK MODAL-->
+<div class="modalContainer">
+  <form id="createTaskForm">
+    <h2>Create Task</h2>
+    <label for="taskTitle">Task Title </label>
+    <input
+      type="text"
+      class="inputField"
+      id="taskTitle"
+      placeholder="e.g. Write a project brief"
+      required
+    />
+    <label for="taskDescription">Task Description </label>
+    <textarea
+      name="taskDescription"
+      id="taskDescription"
+      class="inputField textArea"
+      placeholder="e.g. Write a project brief for..."
+      required
+    ></textarea>
+    <label for="assignToDropdown">Assign To</label>
+    <select name="assignTo" id="assignToDropdown">
+      <option value="">Nobody</option>
+      <option value="jacob">Jacob</option>
+      <option value="Mina">Mina</option>
+      <option value="ibrahim">Ibrahim</option>
+    </select>
+    <button type="submit" class="btn" id="createTaskBtn">Create Task</button>
+  </form>
+</div>

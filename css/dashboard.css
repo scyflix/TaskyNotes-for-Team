@@ -14,7 +14,7 @@ body {
   padding: 0 10px;
 }
 
-.navBtn {
+.navBtn, .actionBtn {
   padding: 8px;
   font-size: 1rem;
   font-weight: 600;
@@ -28,7 +28,10 @@ body {
   align-items: center;
   gap: 5px;
 }
-
+.actionBtn:hover {
+  background: #ffffff;
+  color: #000000;
+}
 .navBtn:hover {
 opacity: 0.6; 
  color: white;
@@ -48,6 +51,9 @@ opacity: 0.6;
         display: flex;
         flex-direction: column;
         gap: 20px;
+      }
+      .section:last-child {
+        margin-bottom: 20px;
       }
 
       .sectionTitle {

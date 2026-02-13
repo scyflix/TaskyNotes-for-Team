@@ -4,7 +4,11 @@ import { attachSidebarToggle } from "./utils.js";
 import { openCreatrTaskModal } from "./task.js"
 
 window.addEventListener("DOMContentLoaded", async () => {
-  await loadComponent("/components/sidebar-admin.html", "sidebarContainer");
+  await loadComponent("/components/sidebar-admin.html", "adminSidebarContainer");
+  await loadComponent(
+    "/components/sidebar-member.html",
+    "memberSidebarContainer",
+  );
 
   attachSidebarToggle();
   attachSidebarEvents();

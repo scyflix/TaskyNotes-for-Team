@@ -14,12 +14,12 @@ padding: 10px;
    overflow: auto;
    padding: 15px 15px 20px;
 }
-#sidebarContainer {
+.sidebarContainer {
   background: var(--card-bg);
   height: 100%;
   border-radius: var(--radius);
 }
-#sidebar {
+.sidebar {
    height: 100%;
    width: 100%;
    padding-top: 15px;
@@ -31,14 +31,14 @@ padding: 10px;
       padding: 0;
       max-height: 95%;
    }
-   #sidebarContainer {
+   .sidebarContainer {
       z-index: 2;
       width: 80%;
       transform: translateX(-100%);
       transition: 0.4s;
       position: absolute;
    }
-   #sidebarContainer.show {
+   .sidebarContainer.show {
       transform: translateX(0);
    }
 }

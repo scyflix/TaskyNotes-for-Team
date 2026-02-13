@@ -1,5 +1,5 @@
 export function sidebarToggle() {
-  const sidebar = document.getElementById("sidebarContainer");
+  const sidebar = document.querySelector(".sidebarContainer");
   sidebar.classList.toggle("show");
 }
 export function attachSidebarToggle() {

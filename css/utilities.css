@@ -1,3 +1,30 @@
+/* GLOBAL SCROLLBAR */
+.mainContent {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--card-bg);
+}
+
+/* CHROME, EDGE, SAFARI */
+.mainContent::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius);
+  border: 2px solid var(--card-bg);
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: #0393d6; /* slightly brighter primary */
+}
+
 .pageHeader {
   background: var(--header-bg);
   backdrop-filter: blur(30px);

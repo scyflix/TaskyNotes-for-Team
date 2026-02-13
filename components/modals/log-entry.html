@@ -1,0 +1,32 @@
+<div class="modalContainer">
+  <form id="logTaskForm">
+    <h2>Log Task</h2>
+    <label for="taskLogText">Task Completed</label>
+    <input
+      placeholder="e.g. Fixed API bug"
+      type="text"
+      class="inputField"
+      id="taskLogText"
+      required
+    />
+
+    <label for="taskLogTime">Date Completed</label>
+    <input type="datetime-local" id="taskLogTime" class="inputField" required />
+
+    <label for="taskLogStatus">Status</label>
+    <select name="taskLogStatus" id="taskLogStatus">
+      <option value="progress">Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+
+    <label for="taskLogNote">Note</label>
+    <textarea
+      id="taskLogNote"
+      placeholder="Add details about what you finished…"
+      class="inputField textArea"
+      required
+    ></textarea>
+
+    <button id="logTask" class="btn">Submit</button>
+  </form>
+</div>

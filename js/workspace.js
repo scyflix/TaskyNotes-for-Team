@@ -10,13 +10,13 @@ const sections = {
         <div class="taskCard">
           <h3 class="taskTitle">Design Landing Page</h3>
           <p class="taskMeta">Due: Feb 14 • Priority: High</p>
-          <button class="btn btn-primary btn-sm" id="markDone">Mark as Done</button>
+          <button class="btn btn-primary btn-sm" id="markDone">View Details</button>
                 <button type="button" class="btn btn-sm" id="logProgress">Log Progress</button>
         </div>
         <div class="taskCard">
           <h3 class="taskTitle">Write Email Copy</h3>
           <p class="taskMeta">Due: Feb 16 • Priority: Medium</p>
-          <button class="btn btn-primary btn-sm">Mark as Done</button>
+          <button class="btn btn-primary btn-sm">View Details</button>
                           <button type="button" class="btn btn-sm" id="logProgress">Log Progress</button>
 
         </div>

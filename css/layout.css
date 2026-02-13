@@ -18,6 +18,7 @@ padding: 10px;
   background: var(--card-bg);
   height: 100%;
   border-radius: var(--radius);
+  padding-top: 10px;
 }
 .sidebar {
    height: 100%;

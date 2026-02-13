@@ -1,11 +1,26 @@
 import { loadComponent } from "./ui.js";
 
-export function openCreatrTaskModal() {
-   const createTaskBtn = document.getElementById("createTask");
+export function openCreateTaskModal() {
+  const createTaskOpen = document.getElementById("createTaskOpen");
 
-   if(createTaskBtn) {
-      createTaskBtn.addEventListener("click", async () => {
-         await loadComponent("/components/modals/createTask.html", "modalContainer");
-      })
-   }
+  if (createTaskOpen) {
+    createTaskOpen.addEventListener("click", async () => {
+      await loadComponent(
+        "/components/modals/create-task.html",
+        "modalContainer",
+      );
+    });
+  }
+}
+
+export function openLogTaskModal() {
+  const logTaskOpen = document.getElementById("logTaskOpen");
+  if (logTaskOpen) {
+    logTaskOpen.addEventListener("click", async () => {
+      await loadComponent(
+        "/components/modals/log-entry.html",
+        "modalContainer",
+      );
+    });
+  }
 }

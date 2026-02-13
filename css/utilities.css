@@ -1,0 +1,52 @@
+.pageHeader {
+  background: var(--header-bg);
+  backdrop-filter: blur(30px);
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+.headerLeft {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+/*NAVICATION ICON SVG*/
+.navIcon svg,
+.menuIcon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+/*SIDEBAR TOGGLE MENU ICON*/
+.menuBtn {
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, var(--navBtn-bg), var(--bg));
+  border: 1px solid var(--border);
+  color: var(--color);
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.menuBtn:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 600px) {
+   .menuBtn {
+      display: none;
+   }
+}

@@ -1,0 +1,84 @@
+/*IMPORT FORM*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/*RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*HTML AND BODY*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif, system-ui;
+  background: var(--bg);
+  color: var(--color);
+}
+
+/*MAIN*/
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+/*VARIABLES*/
+:root {
+  --bg: #000;
+  --color: #fff;
+  --header-bg: rgba(128, 128, 128, 0.258);
+  --mainContent-bg: #1f1e1e;
+  --navBtn-bg: #222;
+  --primary: #027ab2;
+  --secondary: #4caf50;
+  --accent: #6a5acd;
+  --card-bg: #111;
+  --border: #333;
+  --form-bg: #111;
+  --input-bg: #1c1c1c;
+  --input-color: #ffffff;
+
+  --radius: 8px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/*Smooth text rendering*/
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*TYPOGRAPHY*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--color);
+}
+p {
+  margin-bottom: var(--space-md);
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.pageTitle {
+  text-align: center;
+  padding-top: 20px;
+}

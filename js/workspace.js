@@ -9,13 +9,13 @@ const sections = {
       <div class="taskList">
         <div class="taskCard">
           <h3 class="taskTitle">Design Landing Page</h3>
-          <p class="taskMeta">Due: Feb 14 • Priority: High</p>
+          <p class="taskMeta meta">Due: Feb 14 • Priority: High</p>
           <button class="btn btn-primary btn-sm" id="markDone">View Details</button>
                 <button type="button" class="btn btn-sm" id="logProgress">Log Progress</button>
         </div>
         <div class="taskCard">
           <h3 class="taskTitle">Write Email Copy</h3>
-          <p class="taskMeta">Due: Feb 16 • Priority: Medium</p>
+          <p class="taskMeta meta">Due: Feb 16 • Priority: Medium</p>
           <button class="btn btn-primary btn-sm">View Details</button>
                           <button type="button" class="btn btn-sm" id="logProgress">Log Progress</button>
 
@@ -30,35 +30,35 @@ const sections = {
       <div class="taskGrid">
         <div class="taskCard">
           <h3 class="taskTitle">Fix Navbar Bug</h3>
-          <p class="taskMeta">Assigned to: Sarah</p>
+          <p class="taskMeta meta">Assigned to: Sarah</p>
         </div>
         <div class="taskCard">
           <h3 class="taskTitle">Prepare Presentation</h3>
-          <p class="taskMeta">Assigned to: Abdulroqib</p>
+          <p class="taskMeta meta">Assigned to: Abdulroqib</p>
         </div>
           <div class="taskCard">
           <h3 class="taskTitle">Update Database Schema</h3>
-          <p class="taskMeta">Unassigned</p>
+          <p class="taskMeta meta">Unassigned</p>
                           <button type="button" class="btn btn-sm" id="takeTask">Take Task</button>
 
         </div>
           <div class="taskCard">
           <h3 class="taskTitle">Update Database Schema</h3>
-          <p class="taskMeta">Unassigned</p>
+          <p class="taskMeta meta">Unassigned</p>
                           <button type="button" class="btn btn-sm" id="takeTask">Take Task</button>
 
         </div>
         <div class="taskCard">
           <h3 class="taskTitle">Prepare Presentation</h3>
-          <p class="taskMeta">Assigned to: Abdulroqib</p>
+          <p class="taskMeta meta">Assigned to: Abdulroqib</p>
         </div>
         <div class="taskCard">
           <h3 class="taskTitle">Prepare Presentation</h3>
-          <p class="taskMeta">Assigned to: Abdulroqib</p>
+          <p class="taskMeta meta">Assigned to: Abdulroqib</p>
         </div>
         <div class="taskCard">
           <h3 class="taskTitle">Update Database Schema</h3>
-          <p class="taskMeta">Unassigned</p>
+          <p class="taskMeta meta">Unassigned</p>
                           <button type="button" class="btn btn-sm" class="takeTask">Take Task</button>
 
         </div>
@@ -126,8 +126,11 @@ const sections = {
 };
 
 export function loadSection(section) {
-  const content = document.getElementById("dashboardContent");
-  content.innerHTML = sections[section] || "<p>Section not found.</p>";
+  const content = document.getElementById("workspaceDashboardContent");
+  if(content) {
+
+    content.innerHTML = sections[section] || "<p>Section not found.</p>";
+  }
 }
 
 export function attachSidebarEvents() {

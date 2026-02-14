@@ -36,7 +36,9 @@ body {
 opacity: 0.6; 
  color: white;
 }
-
+h3 {
+  position: relative;
+}
 .role {
   font-size: 0.8rem;
   color: #000000;
@@ -79,7 +81,7 @@ opacity: 0.6;
         margin-bottom: 6px;
       }
 
-      .taskMeta {
+      .meta {
         font-size: 0.85rem;
         opacity: 0.8;
         margin-bottom: 10px;

@@ -20,10 +20,13 @@ padding: 10px;
   border-radius: var(--radius);
   padding-top: 10px;
 }
-.sidebar {
+#sidebar {
    height: 100%;
    width: 100%;
    padding-top: 15px;
+}
+#sidebar a:hover {
+   text-decoration: none;
 }
 @media (max-width: 600px) {
    .main {

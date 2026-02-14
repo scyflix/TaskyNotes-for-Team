@@ -7,7 +7,7 @@ export function openCreateTaskModal() {
     createTaskOpen.addEventListener("click", async () => {
       await loadComponent(
         "/components/modals/create-task.html",
-        "modalContainer",
+        "modalContainer"
       );
     });
   }
@@ -19,8 +19,19 @@ export function openLogTaskModal() {
     logTaskOpen.addEventListener("click", async () => {
       await loadComponent(
         "/components/modals/log-entry.html",
-        "modalContainer",
+        "modalContainer"
       );
     });
+  }
+}
+
+export function openCreateWorkspaceModal() {
+  const createWorkspaceOpen = document.getElementById("createWorkspaceOpen");
+  if(createWorkspaceOpen) {
+    createWorkspaceOpen.addEventListener("click", async () => {
+      await loadComponent(
+        "/components/modals/create-workspace.html", "modalContainer"
+      )
+    })
   }
 }

@@ -59,7 +59,7 @@ const sections = {
         <div class="taskCard">
           <h3 class="taskTitle">Update Database Schema</h3>
           <p class="taskMeta">Unassigned</p>
-                          <button type="button" class="btn btn-sm" id="takeTask">Take Task</button>
+                          <button type="button" class="btn btn-sm" class="takeTask">Take Task</button>
 
         </div>
       </div>
@@ -91,16 +91,34 @@ const sections = {
       <h2 class="sectionTitle">Activity Log</h2>
       <div class="activityList">
         <div class="activityItem">
-          <p><strong>Sarah</strong> completed <em>Fix Navbar Bug</em></p>
-          <span class="activityTime">2 hours ago</span>
+        <p><strong>Sarah</strong> completed <em>Fix Navbar Bug</em></p>
+        <span class="activityTime">2 hours ago</span>
+
+       <div class="activityItemActions">
+        <button class="adminOnly markCompleted btn-sm btn btn-primary">Mark as complete</button>
+        <button class="adminOnly taskDetails btn-sm btn">View Details</button>
+        <button class="adminOnly commentOpener btn-sm btn">Comment</button>
+        </div>
         </div>
         <div class="activityItem">
           <p><strong>Abdulroqib</strong> created <em>Design Landing Page</em></p>
           <span class="activityTime">5 hours ago</span>
+
+             <div class="activityItemActions">
+        <button class="adminOnly markCompleted btn-sm btn btn-primary">Mark as complete</button>
+        <button class="adminOnly taskDetails btn-sm btn">View Details</button>
+        <button class="adminOnly commentOpener btn-sm btn">Comment</button>
+        </div>
         </div>
         <div class="activityItem">
           <p><strong>David</strong> joined the workspace</p>
           <span class="activityTime">1 day ago</span>
+
+            <div class="activityItemActions">
+                    <button class="adminOnly markCompleted btn-sm btn btn-primary">Mark as complete</button>
+        <button class="adminOnly taskDetails btn-sm btn">View Details</button>
+        <button class="adminOnly commentOpener btn-sm btn">Comment</button>
+        </div>
         </div>
       </div>
     </section>

@@ -43,6 +43,180 @@ label {
   border-color: red;
 }
 
+/*================= 
+PERSONAL LOGGED TASK SECTION
+===================*/
+
+/*PERSONAL INPUT CONTAINER IN DASHBOARD*/
+.container {
+  width: 100%;
+    margin: 20px 0;
+}
+.personalLogInputContainer {
+    max-width: 0;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-radius: 12px;
+  transition:  max-height 1s ease, max-width 1s ease, padding 1s ease;
+}
+.expand {
+  max-width: 700px;
+  max-height: 600px;
+  padding: 20px;
+  border: 1px solid #6a5acd;
+}
+.expand label {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* LOG LIST */
+.logs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* LOG ITEM */
+details {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+details[open] {
+  border-color: #4b4bff;
+  background: #1d1d1d42;
+}
+details[open] .deleteBtn {
+  background-color: #1c1c1c;
+}
+summary {
+  background: var(--bg);
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deleteBtn {
+  background-color: #000000;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.852);
+  transition: color 0.4s ease, background-color 0.5s ease, transform 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+.deleteBtn.tooltip::after {
+  background: red;
+}
+/* Tooltip bubble */
+.tooltip::after {
+  content: attr(data-title);
+  position: absolute;
+  left: -100%;
+  top: -80%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 60px 60px 0 60px;
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform-origin: top;
+  z-index: 9999;
+}
+
+/* Tooltip arrow */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show on hover */
+.tooltip:hover::after,
+.tooltip:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.deleteBtn:hover {
+  transform: scale(1.1);
+  color: rgb(255, 0, 0);
+}
+.deleteBtn svg {
+  width: 25px;
+  height: 25px;
+}
+details span {
+  background-color: #181818;
+  padding: 8px;
+  border-radius: 4px 8px;
+  margin-top: 5px;
+  display: block;
+  width: fit-content;
+  cursor: text;
+}
+
+details p {
+  margin-top: 10px;
+  color: #cfcfcf;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#personalCreatedLogs {
+    margin: 10px 0 50px;
+}
+/* When a log is added */
+.taskContainer {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.taskContainer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* When a log is deleted */
+.taskContainer.removing {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.placeholderText {
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
 /*SINGLE INPUT FIELD*/
 .singleInput {
   display: flex;

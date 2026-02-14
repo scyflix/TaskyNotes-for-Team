@@ -38,6 +38,7 @@ padding: 10px;
    .sidebarContainer {
       z-index: 2;
       width: 80%;
+      max-width: 300px;
       transform: translateX(-100%);
       transition: 0.4s;
       position: absolute;

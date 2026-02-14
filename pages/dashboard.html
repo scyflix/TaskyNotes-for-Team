@@ -49,14 +49,36 @@
 
       <!-- MAIN CONTENT -->
       <article class="mainContent" id="dashboardContent">
-        <!-- Dynamic content will load here -->
+        <section id="upperDashboardContainer">
+           <!-- Dynamic content will load here -->
+
+         </section>
+          <section class="container">
+            <form class="personalLogInputContainer form">
+              <h2>Log Task</h2>
+                <label for="task">Task Completed</label>
+                <input placeholder="e.g. Fixed API bug" type="text" id="task" class="inputField">
+
+                <label for="taskTime">Date Completed</label>
+                <input type="datetime-local" id="taskTime" class="inputField">
+
+                <label for="note">Notes</label>
+                <textarea id="note" placeholder="Add details about what you finished…" class="inputField textArea"></textarea>
+
+                <button type="button" id="logTask" class="btn">Log Task</button>
+            </form>
+        </section>
+
+        <section id="personalCreatedLogs" class="logs">
+          <h3>Personal Logged Tasks</h3>
+        </section>
       </article>
     </main>
 <script type="module">
-  import { renderDashboard } from "/js/dashboard.js";
+  import { renderDashboard } from "../js/dashboard.js";
   renderDashboard();
 </script>
-
+<script type="module" src="../js/logs.js"></script>
         <script type="module" src="../js/app.js"></script>
 </body>
 </html>

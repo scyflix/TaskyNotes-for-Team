@@ -1,7 +1,7 @@
 import { state } from "./data/state.js";
 
 export function renderDashboard() {
-  const dashboardContainer = document.querySelector("#dashboardContent");
+  const dashboardContainer = document.querySelector("#upperDashboardContainer");
   dashboardContainer.innerHTML = state.workspaces
     .filter((ws) => ws.status === "active")
     .map(

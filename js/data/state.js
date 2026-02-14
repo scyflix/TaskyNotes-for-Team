@@ -20,8 +20,8 @@ export const state = {
       name: "Marketing Team",
       admin_id: "member_001",
       created_at: "22/02/2026",
-      role: "memeber",
-      status: "closed",
+      role: "member",
+      status: "active",
     },
     {
       id: "ws_003",
@@ -29,7 +29,7 @@ export const state = {
       admin_id: "admin_002",
       created_at: "3/05/2026",
       role: "admin",
-      status: "active",
+      status: "closed",
     },
   ],
   tasks: [

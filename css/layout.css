@@ -28,7 +28,7 @@ padding: 10px;
 #sidebar a:hover {
    text-decoration: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
    .main {
       grid-template-columns: 1fr;
       gap: 0;

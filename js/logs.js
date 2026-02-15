@@ -1,6 +1,6 @@
-import {
-  personalLogInputContainerPanelToggle
-} from "./utils.js";
+import { personalLogInputContainerPanelToggle, dataCount } from "./utils.js";
+import { state } from "./data/state.js";
+
 
 const taskEl = document.getElementById("task");
 const timeEl = document.getElementById("taskTime");
@@ -10,9 +10,9 @@ const personalCreatedLogs = document.getElementById("personalCreatedLogs");
 const logTaskBtn = document.getElementById("logTask");
 
 function formatDateTime(isoString) {
-   const date = new Date(isoString);
-   
-   return date.toLocaleString("en-US", {
+  const date = new Date(isoString);
+  
+  return date.toLocaleString("en-US", {
     month: "long", // February
     day: "numeric", // 11
     year: "numeric", // 2026
@@ -21,9 +21,15 @@ function formatDateTime(isoString) {
    });
 }
 
+let savedLogDetails = state.tasks || [];
+
+//Count number of created tasks
+     const loggedTasksCount = document.getElementById("loggedTasksCount");
+     dataCount(loggedTasksCount, savedLogDetails);
+
 function checkIfEmpty() {
   if (savedLogDetails.length === 0) {
-    personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one using the form next to this panel.</p>`;
+    personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by clicking "Open Input Panel" in the sidebar.</p>`;
   } else {
    const placeholder = personalCreatedLogs.querySelector(".placeholderText")
    if(placeholder) placeholder.remove()
@@ -31,21 +37,13 @@ function checkIfEmpty() {
 }
 
 function createLogElement(log) {   
+  /*
    let savedLogDetails = JSON.parse(localStorage.getItem("logDetails")) || [];
+*/
 
-   let changed = false;
-
-   savedLogDetails = savedLogDetails.map((log) => {
-     if (!log.id) {
-       changed = true;
-       return { ...log, id: crypto.randomUUID() };
-     }
-     return log;
-   });
-
-   if (changed) {
+    /*
      localStorage.setItem("logDetails", JSON.stringify(savedLogDetails));
-   }
+     */
 
  const taskDetails = document.createElement("details");
  taskDetails.classList.add("taskContainer");
@@ -72,8 +70,9 @@ function createLogElement(log) {
 
  return taskDetails
 }
+/*
 const savedLogDetails = JSON.parse(localStorage.getItem("logDetails")) || [];
-
+*/
 savedLogDetails.forEach((log) => {
    
    const el = createLogElement(log);
@@ -106,8 +105,12 @@ logTaskBtn.addEventListener("click", () => {
    };
 
   savedLogDetails.unshift(logData);
+   state.tasks = savedLogDetails;
+
+  /*
   localStorage.setItem("logDetails", JSON.stringify(savedLogDetails));
-  
+  */
+
   const el = createLogElement(logData)
   personalCreatedLogs.prepend(el)
 checkIfEmpty();
@@ -139,10 +142,14 @@ personalCreatedLogs.addEventListener("click", (e) => {
                if (index === -1) return;
 
                      savedLogDetails.splice(index, 1);
+                     state.tasks = savedLogDetails
+
+                     /*
                      localStorage.setItem(
                        "logDetails",
                        JSON.stringify(savedLogDetails),
                      );
+*/
 
                      // Add animation class
       logToDelete.classList.add("removing");

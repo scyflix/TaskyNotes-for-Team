@@ -1,12 +1,38 @@
 import { state } from "./data/state.js";
+import { dataCount } from "./utils.js"
 
+const createdWorkspaces = state.workspaces.filter(
+  (ws) => ws.role === "admin" && ws.status === "active",
+);
+const openedWorkspaces = state.workspaces.filter(ws => ws.status === "active")
+const closedWorkspaces = state.workspaces.filter(ws => ws.status === "closed")
+
+
+
+const createdWorkspacesCount = document.getElementById(
+  "createdWorkspacesCount",
+);
+const closedWorkspacesCount = document.getElementById("closedWorkspacesCount");
+const workspaceCount = document.getElementById("workspaceCount")
+dataCount(workspaceCount, openedWorkspaces);
+dataCount(createdWorkspacesCount, createdWorkspaces);
+dataCount(closedWorkspacesCount, closedWorkspaces);
 export function renderDashboard() {
   const dashboardContainer = document.querySelector("#upperDashboardContainer");
-  dashboardContainer.innerHTML = state.workspaces
+  const header = document.createElement("h2")
+  header.textContent = "Recent Workspaces"
+
+  const div = document.createElement("div")
+  div.classList.add("recentContainer")
+
+  div.innerHTML = state.workspaces
     .filter((ws) => ws.status === "active")
     .map(
       (ws) =>
-        ` <div class="workspaceCard card"> <h3>${ws.name} <span class="role ${ws.role}">${ws.role}</span></h3> <span class="meta">Created on: ${ws.created_at}</span></div> `,
+        `
+        <div class="workspaceCard card"> <h3>${ws.name} <span class="tag ${ws.role}">${ws.role}</span></h3> <span class="meta">Created on: ${ws.created_at}</span></div> `,
     )
     .join("");
+
+  dashboardContainer.prepend(header, div)
 }

@@ -49,11 +49,29 @@
 
       <!-- MAIN CONTENT -->
       <article class="mainContent" id="dashboardContent">
+        <section class="grid" id="statsContainer">
+          <div class="card">
+            <h3>All Workspaces</h3>
+            <span class="statNum" id="workspaceCount">0</span>
+          </div>
+          <div class="card">
+            <h3>Created Workspaces</h3>
+            <span class="statNum" id="createdWorkspacesCount">0</span>
+          </div>
+           <div class="card">
+            <h3>Closed Workspaces</h3>
+            <span class="statNum" id="closedWorkspacesCount">0</span>
+          </div>
+          <div class="card">
+            <h3>Logged Tasks</h3>
+            <span class="statNum" id="loggedTasksCount">0</span>
+          </div>
+        </section>
         <section id="upperDashboardContainer">
            <!-- Dynamic content will load here -->
 
          </section>
-          <section class="container">
+          <section class="container" id="inputContainer">
             <form class="personalLogInputContainer form">
               <h2>Log Task</h2>
                 <label for="task">Task Completed</label>

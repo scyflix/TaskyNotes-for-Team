@@ -84,7 +84,7 @@ PERSONAL LOGGED TASK SECTION
 
 /* LOG ITEM */
 details {
-  background: #111;
+  background: var(--card-bg);
   border: 1px solid #333;
   border-radius: 10px;
   padding: 12px;
@@ -93,13 +93,12 @@ details {
 
 details[open] {
   border-color: #4b4bff;
-  background: #1d1d1d42;
+  background: var(--form-bg);
 }
 details[open] .deleteBtn {
   background-color: #1c1c1c;
 }
 summary {
-  background: var(--bg);
   padding: 2px 5px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -240,6 +239,9 @@ details p {
   transition: 0.3s;
   border: none;
 }
+#toggleInputContainer {
+  margin-top: 10px;
+}
 .btn-primary {
   color: #fff;
   background: var(--primary);
@@ -297,4 +299,10 @@ details p {
 }
 .modalContainer form select option {
 background: var(--bg);
+}
+
+
+.statNum {
+  font-size: 2rem;
+  font-weight: 600;
 }

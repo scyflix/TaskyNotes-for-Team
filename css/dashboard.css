@@ -39,7 +39,7 @@ opacity: 0.6;
 h3 {
   position: relative;
 }
-.role {
+.tag {
   font-size: 0.8rem;
   color: #000000;
   background: var(--secondary);
@@ -92,12 +92,15 @@ h3 {
         font-size: 0.85rem;
       }
 
-      .taskGrid {
+      .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        justify-content: space-evenly;
         gap: 16px;
       }
-
+section {
+  margin: 10px auto;
+}
       .memberList {
         display: flex;
         flex-direction: column;

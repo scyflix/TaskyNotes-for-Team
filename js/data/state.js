@@ -14,6 +14,7 @@ export const state = {
       created_at: "02/02/2026",
       role: "admin",
       status: "active",
+      description: "Design team for the LogHue project",
     },
     {
       id: "ws_002",
@@ -22,6 +23,7 @@ export const state = {
       created_at: "22/02/2026",
       role: "member",
       status: "active",
+      description: "marketing team for the LogHue project",
     },
     {
       id: "ws_003",
@@ -56,35 +58,36 @@ export const state = {
     },
     */
 
-   {
-     id: crypto.randomUUID(),
-     taskValue: "Refactored sidebar component",
-     timeValue: "2026-02-15T10:30",
-     noteValue: "Cleaned up event listeners and improved toggle logic."
+    {
+      id: crypto.randomUUID(),
+      taskValue: "Refactored sidebar component",
+      timeValue: "2026-02-15T10:30",
+      noteValue: "Cleaned up event listeners and improved toggle logic.",
     },
     {
       id: crypto.randomUUID(),
       taskValue: "Designed workspace cards",
       timeValue: "2026-02-14T16:45",
-      noteValue: "Added role badges and improved spacing for readability."
+      noteValue: "Added role badges and improved spacing for readability.",
     },
-  {
-    id: crypto.randomUUID(),
-    taskValue: "Integrated personal task logger",
-    timeValue: "2026-02-13T09:10",
-    noteValue: "Merged Solo UI into Team dashboard and synced state."
-  },
-  {
-    id: crypto.randomUUID(),
-    taskValue: "Updated dashboard summary",
-    timeValue: "2026-02-12T14:20",
-    noteValue: "Added dynamic counts for workspaces and tasks."
-  },
-  {
-    id: crypto.randomUUID(),
-    taskValue: "Improved placeholder logic",
-    timeValue: "2026-02-11T18:05",
-    noteValue: "Ensured empty-state message appears correctly after deletions."
-  }
-]
+    {
+      id: crypto.randomUUID(),
+      taskValue: "Integrated personal task logger",
+      timeValue: "2026-02-13T09:10",
+      noteValue: "Merged Solo UI into Team dashboard and synced state.",
+    },
+    {
+      id: crypto.randomUUID(),
+      taskValue: "Updated dashboard summary",
+      timeValue: "2026-02-12T14:20",
+      noteValue: "Added dynamic counts for workspaces and tasks.",
+    },
+    {
+      id: crypto.randomUUID(),
+      taskValue: "Improved placeholder logic",
+      timeValue: "2026-02-11T18:05",
+      noteValue:
+        "Ensured empty-state message appears correctly after deletions.",
+    },
+  ],
 };

@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="../css/utilities.css" />
 </head>
 <body>
-    <div  id="modalContainer">
-    
-    </div>
+
       <header class="pageHeader">
       <div class="headerLeft">
         <button class="menuBtn" id="toggleSidebar">
@@ -49,10 +47,15 @@
 
       <!-- MAIN CONTENT -->
       <article class="mainContent" id="dashboardContent">
+
+            <div  id="modalContainer">
+    </div>
+
+
         <section class="grid" id="statsContainer">
           <div class="card">
-            <h3>All Workspaces</h3>
-            <span class="statNum" id="workspaceCount">0</span>
+            <h3>Active Workspaces</h3>
+            <span class="statNum" id="activeWorkspaceCount">0</span>
           </div>
           <div class="card">
             <h3>Created Workspaces</h3>
@@ -88,7 +91,7 @@
         </section>
 
         <section id="personalCreatedLogs" class="logs">
-          <h3>Personal Logged Tasks</h3>
+          <h2>Personal Logged Tasks</h2>
         </section>
       </article>
     </main>

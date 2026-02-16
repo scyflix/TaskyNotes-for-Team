@@ -1,6 +1,3 @@
-import {
-   sidebarToggle
-} from "../js/utils.js"
 
 const sections = {
   myTasks: `
@@ -133,15 +130,8 @@ export function loadSection(section) {
   }
 }
 
-export function attachSidebarEvents() {
-  document.querySelectorAll(".navBtn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const section = btn.dataset.section;
-      loadSection(section);
-      sidebarToggle();
-    });
-  });
-}
+export function initWorkspacePage() {
+  loadSection("myTasks");
 
-loadSection("myTasks");
+}
 

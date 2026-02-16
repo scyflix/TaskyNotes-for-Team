@@ -97,6 +97,10 @@ h3 {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         justify-content: space-evenly;
         gap: 16px;
+        margin-bottom: 40px;
+      }
+      .grid .card {
+        margin: 0;
       }
 section {
   margin: 10px auto;

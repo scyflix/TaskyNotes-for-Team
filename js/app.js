@@ -1,37 +1,46 @@
 import { loadComponent } from "./ui.js";
-import { attachSidebarEvents } from "./workspace.js";
+import { attachSidebarEvents } from "./components/sidebar.js";
 import {
   attachSidebarToggle,
   personalLogInputContainerPanelToggle,
-} from "./utils.js";
-import { openCreateTaskModal, openLogTaskModal, openCreateWorkspaceModal } from "./task.js";
-
+} from "./utils/toggle.js";
+import {
+  openCreateTaskModal,
+  openLogTaskModal,
+  openCreateWorkspaceModal,
+} from "./utils/modals.js";
+import { initWorkspacePage } from "./workspace.js";
+import { initPersonalTasks } from "./features/personalTasks.js";
+import { autoExpandTextarea } from "./utils/textarea.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
-
-  
-  await loadComponent("../components/sidebar-admin.html", "adminSidebarContainer");
-
+  await loadComponent(
+    "../components/sidebar-admin.html",
+    "adminSidebarContainer",
+  );
   await loadComponent(
     "../components/sidebar-member.html",
     "memberSidebarContainer",
   );
-
-   await loadComponent(
+  await loadComponent(
     "../components/sidebar-dashboard.html",
     "dashboardSidebarContainer",
   );
-
-   await loadComponent(
-     "../components/sidebar-general.html",
-     "generalSidebarContainer",
-   );
-
+  await loadComponent(
+    "../components/sidebar-general.html",
+    "generalSidebarContainer",
+  );
 
   attachSidebarToggle();
   attachSidebarEvents();
+
   openCreateTaskModal();
   openLogTaskModal();
-  openCreateWorkspaceModal()
-  personalLogInputContainerPanelToggle()
+  openCreateWorkspaceModal();
+  personalLogInputContainerPanelToggle();
+
+  initWorkspacePage();
+  initPersonalTasks();
+
+  autoExpandTextarea();
 });

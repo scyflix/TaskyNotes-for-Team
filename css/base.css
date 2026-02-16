@@ -41,6 +41,7 @@ body {
   --form-bg: #111;
   --input-bg: #1c1c1c;
   --input-color: #ffffff;
+--chevron-color: #c5c5c5;
 
   --radius: 8px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);

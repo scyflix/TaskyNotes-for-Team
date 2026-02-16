@@ -1,7 +1,6 @@
 import { personalLogInputContainerPanelToggle } from "../utils/toggle.js";
 import {dataCount} from "../utils.js"
 import { state } from "../data/state.js";
-import { attachSidebarEvents } from "../components/sidebar.js";
 
 let taskEl
 let timeEl
@@ -24,7 +23,7 @@ export function initPersonalTasks() {
    
     loggedTasksCount = document.getElementById("loggedTasksCount");
 
-     savedLogDetails = state.tasks || [];
+    savedLogDetails = state.tasks || [];
 
      renderExistingLogs()
      attachCreateLogEvent()
@@ -47,6 +46,7 @@ function formatDateTime(isoString) {
 
 function updateTaskCount() {
    //Count number of created tasks
+   if(!loggedTasksCount) return
    dataCount(loggedTasksCount, savedLogDetails);
 }
 
@@ -55,7 +55,7 @@ function checkIfEmpty() {
   if (savedLogDetails.length === 0) {
     personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by clicking "Open Input Panel" in the sidebar.</p>`;
   } else {
-   const placeholder = personalCreatedLogs.querySelector(".placeholderText")
+    const placeholder = document.querySelector(".placeholderText")
    if(placeholder) placeholder.remove()
   }
 }
@@ -99,13 +99,14 @@ function createLogElement(log) {
 const savedLogDetails = JSON.parse(localStorage.getItem("logDetails")) || [];
 */
 function renderExistingLogs() {
-   personalCreatedLogs.innerHTML = ""
+  if (personalCreatedLogs) personalCreatedLogs.innerHTML = "";
 
 
    savedLogDetails.forEach(log => {
       
       const el = createLogElement(log);
-      personalCreatedLogs.append(el);
+      if(!personalCreatedLogs)  return
+        personalCreatedLogs.append(el);
       
       requestAnimationFrame(() => {
          el.classList.add("show");
@@ -127,39 +128,43 @@ function attachCreateLogEvent() {
       return;
     }
 
-    personalLogInputContainerPanelToggle();
-
+    
     const logData = {
       id: crypto.randomUUID(),
       taskValue,
       timeValue,
       noteValue,
     };
-
+    
     savedLogDetails.unshift(logData);
     state.tasks = savedLogDetails;
-
+    
     /*
-  localStorage.setItem("logDetails", JSON.stringify(savedLogDetails));
-  */
-
-    const el = createLogElement(logData);
-    personalCreatedLogs.prepend(el);
-    checkIfEmpty();
-
-    requestAnimationFrame(() => {
-      el.classList.add("show");
+    localStorage.setItem("logDetails", JSON.stringify(savedLogDetails));
+    */
+   
+   const el = createLogElement(logData);
+   personalCreatedLogs.prepend(el);
+   checkIfEmpty();
+   
+   requestAnimationFrame(() => {
+     el.classList.add("show");
     });
-
+    
     taskEl.value = "";
     timeEl.value = "";
     noteEl.value = "";
+
+    document.querySelector(".personalLogInputContainer").classList.toggle("expand");
+
+    personalLogInputContainerPanelToggle();
   });
 }
 
 
 //For Delete Button
 function attachDeleteLogEvent() {
+  if(!personalCreatedLogs) return
   personalCreatedLogs.addEventListener("click", (e) => {
     const btn = e.target.closest(".deleteBtn");
     if (!btn) return;

@@ -1,14 +1,14 @@
 import { loadComponent } from "./ui.js";
 import { attachSidebarEvents } from "./components/sidebar.js";
 import {
-  attachSidebarToggle,
-  personalLogInputContainerPanelToggle,
-} from "./utils/toggle.js";
-import {
   openCreateTaskModal,
   openLogTaskModal,
   openCreateWorkspaceModal,
 } from "./utils/modals.js";
+import {
+  attachSidebarToggle,
+  personalLogInputContainerPanelToggle,
+} from "./utils/toggle.js";
 import { initWorkspacePage } from "./workspace.js";
 import { initPersonalTasks } from "./features/personalTasks.js";
 import { autoExpandTextarea } from "./utils/textarea.js";
@@ -33,14 +33,15 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   attachSidebarToggle();
   attachSidebarEvents();
-
+  
   openCreateTaskModal();
   openLogTaskModal();
   openCreateWorkspaceModal();
-  personalLogInputContainerPanelToggle();
-
+  
   initWorkspacePage();
   initPersonalTasks();
+  
+  personalLogInputContainerPanelToggle();
 
   autoExpandTextarea();
 });

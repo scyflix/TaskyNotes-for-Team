@@ -22,7 +22,6 @@ export function openCreateTaskModal() {
 
 export function openLogTaskModal() {
   const btn = document.getElementById("logTaskOpen");
-
   if (btn) {
     btn.addEventListener("click", async () => {
       lockScroll();

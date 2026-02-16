@@ -43,8 +43,9 @@ body {
   --input-color: #ffffff;
 --chevron-color: #c5c5c5;
 
-  --radius: 8px;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+--shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+--radius: 8px;
 
   --space-xs: 4px;
   --space-sm: 8px;

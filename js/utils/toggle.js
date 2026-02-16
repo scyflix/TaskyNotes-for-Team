@@ -18,34 +18,23 @@ export function attachSidebarToggle() {
   }
 }
 
-
 // Attaches the personal log input panel toggle behavior
 export function personalLogInputContainerPanelToggle() {
-   
   const toggleInputContainer = document.getElementById("toggleInputContainer");
-  const upperDashboardContainer = document.getElementById(
-    "upperDashboardContainer",
-  );
-  const personalLogInputContainer = document.getElementById(
-    "personalLogInputContainer"
-  );
+  const upperDashboardContainer = document.getElementById("upperDashboardContainer");
+  const personalLogInputContainer = document.querySelector(".personalLogInputContainer");
 
-  if (
-    !toggleInputContainer ||
-    !upperDashboardContainer ||
-    !personalLogInputContainer
-  )
-    return;
+  if (toggleInputContainer || upperDashboardContainer || personalLogInputContainer) {
+    toggleInputContainer.addEventListener("click", () => {
+      upperDashboardContainer.classList.toggle("hide");
 
-  toggleInputContainer.addEventListener("click", () => {
-    upperDashboardContainer.classList.toggle("hide");
+      toggleInputContainer.textContent =
+        toggleInputContainer.textContent === "Close Input Panel"
+          ? "Open Input Panel"
+          : "Close Input Panel";
 
-    toggleInputContainer.textContent =
-      toggleInputContainer.textContent === "Close Input Panel"
-        ? "Open Input Panel"
-        : "Close Input Panel";
-
-    personalLogInputContainer.classList.toggle("expand");
-    toggleInputContainer.classList.toggle("panelClosed");
-  });
+      personalLogInputContainer.classList.toggle("expand");
+      toggleInputContainer.classList.toggle("panelClosed");
+    });
+  }
 }

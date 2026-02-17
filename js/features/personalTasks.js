@@ -26,9 +26,9 @@ export function initPersonalTasks() {
     savedLogDetails = state.tasks || [];
 
      renderExistingLogs()
+     updateTaskCount()
      attachCreateLogEvent()
      attachDeleteLogEvent()
-     updateTaskCount()
      checkIfEmpty()
 }
 
@@ -53,9 +53,11 @@ function updateTaskCount() {
 
 function checkIfEmpty() {
   if (savedLogDetails.length === 0) {
-    personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by clicking "Open Input Panel" in the sidebar.</p>`;
+    if(personalCreatedLogs) {
+      personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by clicking "Open Input Panel" in the sidebar.</p>`;
+    }
   } else {
-    const placeholder = personalCreatedLogs.querySelector(".placeholderText");
+    const placeholder = document.querySelector(".placeholderText");
    if(placeholder) placeholder.remove()
   }
 }
@@ -144,7 +146,9 @@ function attachCreateLogEvent() {
     */
    
    const el = createLogElement(logData);
+
    personalCreatedLogs.prepend(el);
+    
    checkIfEmpty();
    
    requestAnimationFrame(() => {

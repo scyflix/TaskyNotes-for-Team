@@ -27,6 +27,7 @@ createWorkspaceBtn = document.getElementById("createWorkspace");
 
 
 function checkIfEmpty() {
+  if(!upperDashboardContainer) return
   if (savedWorkspaceData.length === 0) {
     upperDashboardContainer.innerHTML = `<p class="placeholderText">No workspaces created yet. Create one using the ‘Create Workspace’ button.</p>`;
   } else {
@@ -146,7 +147,10 @@ function renderExistingWorkspaces() {
   savedWorkspaceData = state.workspaces;
 
 
-   upperDashboardContainer.innerHTML = ""
+  if(!upperDashboardContainer) return
+
+    upperDashboardContainer.innerHTML = ""
+  
 
       const header = document.createElement("h2");
    header.textContent = "Recent Workspaces";

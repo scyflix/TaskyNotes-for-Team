@@ -12,7 +12,7 @@ export async function loadComponent(path, containerId) {
 
 export function closeModal() {
   const modalContainer = document.getElementById("modalContainer");
-  
+
     modalContainer.innerHTML = "";
 
     unlockScroll()

@@ -12,12 +12,8 @@ export async function loadComponent(path, containerId) {
 
 export function closeModal() {
   const modalContainer = document.getElementById("modalContainer");
-
-  //Close modal button
-  const closeModalBtn = document.querySelector(".closeModalBtn");
-    closeModalBtn.addEventListener("click", () => {
-      modalContainer.innerHTML = "";
-    });
+  
+    modalContainer.innerHTML = "";
 
     unlockScroll()
   }

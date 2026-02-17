@@ -1,26 +1,97 @@
 import { dataCount } from "../utils.js";
 import { state } from "../data/state.js";
+import { closeModal } from "../ui.js";
+
 
 let workspaceNameEl;
 let workspaceDescriptionEl;
+let createWorkspaceBtn;
 let upperDashboardContainer;
 let savedWorkspaceData = [];
 
 export function initWorkspaces() {
    workspaceNameEl = document.getElementById("workspacename");
    workspaceDescriptionEl = document.getElementById("workspaceDescription");
-
+createWorkspaceBtn = document.getElementById("createWorkspace");
   upperDashboardContainer = document.getElementById(
         "upperDashboardContainer",
       );
 
       savedWorkspaceData = state.workspaces
 
+      renderExistingWorkspaces()
       updateworkspaceCount()
       checkIfEmpty()
-      createWorkspaceCardElement()
-      renderExistingWorkspaces()
+      attachCreateWorkspaceEvent()        
 }
+
+
+function checkIfEmpty() {
+  if (savedWorkspaceData.length === 0) {
+    upperDashboardContainer.innerHTML = `<p class="placeholderText">No workspaces created yet. Create one using the ‘Create Workspace’ button.</p>`;
+  } else {
+    const placeholder =
+      upperDashboardContainer.querySelector(".placeholderText");
+   if(placeholder) placeholder.remove()
+  }
+}
+
+function formatDateTime(timestamp) {
+  const date = new Date(timestamp);
+  return date.toLocaleString("en-US", {
+    month: "long", // February
+    day: "numeric", // 11
+    year: "numeric", // 2026
+    hour: "2-digit", // 12
+    minute: "2-digit", // 27
+  });
+}
+
+function attachCreateWorkspaceEvent() {
+  if (!createWorkspaceBtn) return;
+
+  //When log task button is clicked to create new log
+  createWorkspaceBtn.addEventListener("click", () => {
+    const workspaceNameValue = workspaceNameEl.value.trim();
+    const workspaceDescriptionValue = workspaceDescriptionEl.value.trim();
+
+    if (!workspaceNameValue || !workspaceDescriptionValue) {
+      alert("Input field must not be empty");
+      return;
+    }
+
+    const formattedTDate = formatDateTime(Date.now());
+
+    const workspaceData = {
+      id: crypto.randomUUID(),
+      name: workspaceNameValue,
+      created_at: formattedTDate,
+      role: "admin",
+      status: "active",
+      description: workspaceDescriptionValue,
+    };
+
+    savedWorkspaceData.unshift(workspaceData);
+    state.workspaces = savedWorkspaceData;
+
+    /*
+    localStorage.setItem("logDetails", JSON.stringify(savedWorkspaceData));
+    */
+
+    renderExistingWorkspaces();
+    updateworkspaceCount(); 
+    checkIfEmpty();
+
+
+    workspaceNameEl.value = "";
+    workspaceDescriptionEl.value = "";
+
+    closeModal()
+    console.log("close")
+  });
+}
+
+
 function updateworkspaceCount() {
   const createdWorkspaces = state.workspaces.filter(
     (ws) => ws.role === "admin" && ws.status === "active",
@@ -48,7 +119,7 @@ function updateworkspaceCount() {
 function createWorkspaceCardElement(ws) {
 
 const workspaceCard = document.createElement("div")
-workspaceCard.classList.add("workspaceCard card");
+workspaceCard.classList.add("workspaceCard", "card");
 workspaceCard.dataset.id = ws.id
 workspaceCard.innerHTML = `
 <h3>
@@ -70,7 +141,11 @@ workspaceCard.innerHTML = `
 return workspaceCard;
 }
 
+
 function renderExistingWorkspaces() {
+  savedWorkspaceData = state.workspaces;
+
+
    upperDashboardContainer.innerHTML = ""
 
       const header = document.createElement("h2");
@@ -80,8 +155,6 @@ const div = document.createElement("div");
 div.classList.add("recentContainer");
 
 savedWorkspaceData.forEach(wsData => {
-
-   
 
    const wsCard = createWorkspaceCardElement(wsData);
 

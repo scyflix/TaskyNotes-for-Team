@@ -1,4 +1,6 @@
 import { loadComponent, closeModal } from "../ui.js";
+import {initWorkspaces} from "../features/workspaceData.js"
+
 
 function lockScroll() {
   const main = document.querySelector(".mainContent");
@@ -23,8 +25,7 @@ export function openCreateTaskModal() {
         "modalContainer",
       );
 
-            closeModal();
-
+      closeModal();
     });
   }
 }
@@ -40,8 +41,7 @@ export function openLogTaskModal() {
         "modalContainer",
       );
 
-            closeModal();
-
+      closeModal();
     });
   }
 }
@@ -56,10 +56,18 @@ export function openCreateWorkspaceModal() {
         "../components/modals/create-workspace.html",
         "modalContainer",
       );
-      
-      closeModal();
-    });
+
+      initWorkspaces();
+
+      //Close modal button
+      const closeModalBtn = document.querySelector(".closeModalBtn");
+      if(closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+          closeModal();
     
+        });
+      }
+    });
   }
 
 }

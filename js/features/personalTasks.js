@@ -55,7 +55,7 @@ function checkIfEmpty() {
   if (savedLogDetails.length === 0) {
     personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by clicking "Open Input Panel" in the sidebar.</p>`;
   } else {
-    const placeholder = document.querySelector(".placeholderText")
+    const placeholder = personalCreatedLogs.querySelector(".placeholderText");
    if(placeholder) placeholder.remove()
   }
 }

@@ -1,13 +1,19 @@
-import { loadComponent } from "../ui.js";
+import { loadComponent, closeModal } from "../ui.js";
 
 function lockScroll() {
   const main = document.querySelector(".mainContent");
   if (main) main.classList.add("lockScroll");
 }
 
+ export function unlockScroll() {
+    const main = document.querySelector(".mainContent");
+    if (main) main.classList.remove("lockScroll");
+ }
+
 export function openCreateTaskModal() {
   const btn = document.getElementById("createTaskOpen");
 
+  
   if (btn) {
     btn.addEventListener("click", async () => {
       lockScroll();
@@ -16,6 +22,9 @@ export function openCreateTaskModal() {
         "../components/modals/create-task.html",
         "modalContainer",
       );
+
+            closeModal();
+
     });
   }
 }
@@ -30,6 +39,9 @@ export function openLogTaskModal() {
         "../components/modals/log-entry.html",
         "modalContainer",
       );
+
+            closeModal();
+
     });
   }
 }
@@ -44,6 +56,12 @@ export function openCreateWorkspaceModal() {
         "../components/modals/create-workspace.html",
         "modalContainer",
       );
+      
+      closeModal();
     });
+    
   }
+
 }
+
+

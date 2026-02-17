@@ -8,6 +8,13 @@ padding: 10px;
 }
 .mainContent {
    position: relative;
+
+   /*Try: center modals*/
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   
    background: var(--mainContent-bg);
    border-radius: var(--radius);
    border: 1px solid var(--border);

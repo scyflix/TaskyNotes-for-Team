@@ -127,7 +127,7 @@ function attachCreateLogEvent() {
       alert("Input field must not be empty");
       return;
     }
-
+    
     
     const logData = {
       id: crypto.randomUUID(),

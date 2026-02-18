@@ -26,15 +26,16 @@ export function personalLogInputContainerPanelToggle() {
 
   if (toggleInputContainer || upperDashboardContainer || personalLogInputContainer) {
     toggleInputContainer.addEventListener("click", () => {
-      upperDashboardContainer.classList.toggle("hide");
-
+      
       toggleInputContainer.textContent =
-        toggleInputContainer.textContent === "Close Input Panel"
-          ? "Open Input Panel"
-          : "Close Input Panel";
-
+      toggleInputContainer.textContent === "Close Input Panel"
+      ? "Open Input Panel"
+      : "Close Input Panel";
+      
       personalLogInputContainer.classList.toggle("expand");
       toggleInputContainer.classList.toggle("panelClosed");
+        
+        upperDashboardContainer.classList.toggle("hide");
     });
   }
 }

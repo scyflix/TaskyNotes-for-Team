@@ -159,8 +159,7 @@ function attachCreateLogEvent() {
     noteEl.value = "";
 
     document.querySelector(".personalLogInputContainer").classList.toggle("expand");
-
-    personalLogInputContainerPanelToggle();
+document.getElementById("upperDashboardContainer").classList.toggle("hide")
   });
 }
 

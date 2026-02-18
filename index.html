@@ -1,13 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>taskynotes-for-team</title>
-  </head>
-  <body>
-    <a href="pages/workspace-dashboard-admin.html">workspace dashboard</a>
-    <a href="pages/workspace-create.html">workspace creation</a>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogHue Team Edition</title>
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">LogHue<span>Team</span></div>
+
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="pages/auth.html" class="btn">Get Started</a>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Organize Your Team.<br>
+      <span>Work Smarter Together.</span></h1>
+
+      <p>
+        LogHue Team Edition helps teams collaborate, manage workspaces, track tasks, and stay aligned — all in one clean, modern interface.
+      </p>
+
+      <a href="pages/auth.html" class="cta-btn">Start for Free</a>
+    </div>
+
+    <div class="hero-illustration">
+      <div class="mock-card"></div>
+      <div class="mock-card small"></div>
+      <div class="mock-card tiny"></div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Why LogHue?</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Collaborative Workspaces</h3>
+        <p>Create, manage, and organize team workspaces with ease.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Task Tracking</h3>
+        <p>Log tasks, track progress, and keep everyone aligned.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Team Management</h3>
+        <p>Add members using email and manage roles effortlessly.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Clean & Modern UI</h3>
+        <p>A distraction‑free interface designed for productivity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>Built for Teams of All Sizes</h2>
+    <p>
+      Whether you're a startup, a school project group, or a growing company, LogHue Team Edition gives you the tools to stay organized and work efficiently.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 LogHue Team Edition. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
 </html>

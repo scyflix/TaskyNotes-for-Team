@@ -22,7 +22,9 @@ createWorkspaceBtn = document.getElementById("createWorkspace");
       renderExistingWorkspaces()
       updateworkspaceCount()
       checkIfEmpty()
-      attachCreateWorkspaceEvent()        
+      attachCreateWorkspaceEvent()      
+      
+     
 }
 
 
@@ -117,7 +119,7 @@ function updateworkspaceCount() {
 }
 
 
-function createWorkspaceCardElement(ws) {
+export function createWorkspaceCardElement(ws) {
 
 const workspaceCard = document.createElement("div")
 workspaceCard.classList.add("workspaceCard", "card");
@@ -158,7 +160,24 @@ function renderExistingWorkspaces() {
 const div = document.createElement("div");
 div.classList.add("recentContainer");
 
-savedWorkspaceData.forEach(wsData => {
+const createdWorkspaces = savedWorkspaceData.filter(
+  (ws) => ws.role === "admin" && ws.status === "active",
+);
+
+const activeWorkspaces = savedWorkspaceData.filter(
+  (ws) => ws.status === "active",
+);
+
+
+const closedWorkspaces = savedWorkspaceData.filter(
+  (ws) => ws.status === "closed",
+);
+
+const recentWorkspaces = activeWorkspaces
+  .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+  .slice(0, 2);
+
+recentWorkspaces.forEach(wsData => {
 
    const wsCard = createWorkspaceCardElement(wsData);
 
@@ -167,3 +186,6 @@ savedWorkspaceData.forEach(wsData => {
 })
    upperDashboardContainer.prepend(header, div);
 }
+
+
+

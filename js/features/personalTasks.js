@@ -50,11 +50,10 @@ function updateTaskCount() {
    dataCount(loggedTasksCount, savedLogDetails);
 }
 
-
 function checkIfEmpty() {
   if (savedLogDetails.length === 0) {
     if(personalCreatedLogs) {
-      personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by clicking "Open Input Panel" in the sidebar.</p>`;
+      personalCreatedLogs.innerHTML = `<p class="placeholderText">No task logged yet. Add one by using the "Open Input Panel" button in the sidebar.</p>`;
     }
   } else {
     const placeholder = document.querySelector(".placeholderText");
@@ -200,6 +199,9 @@ function attachDeleteLogEvent() {
     // Remove after animation ends
     setTimeout(() => {
       logToDelete.remove();
+
+      //update count
+      updateTaskCount()
       //check if task log conatiner is empty
       checkIfEmpty();
     }, 250); // matches CSS transition time

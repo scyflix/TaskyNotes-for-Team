@@ -25,7 +25,13 @@ export function openCreateTaskModal() {
         "modalContainer",
       );
 
-      closeModal();
+      //Close modal button
+      const closeModalBtn = document.querySelector(".closeModalBtn");
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+          closeModal();
+        });
+      }
     });
   }
 }
@@ -41,7 +47,13 @@ export function openLogTaskModal() {
         "modalContainer",
       );
 
-      closeModal();
+      //Close modal button
+      const closeModalBtn = document.querySelector(".closeModalBtn");
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+          closeModal();
+        });
+      }
     });
   }
 }

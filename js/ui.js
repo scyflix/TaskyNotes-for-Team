@@ -1,4 +1,3 @@
-import {unlockScroll} from "./utils/modals.js"
 
 export async function loadComponent(path, containerId) {
   const container = document.getElementById(containerId);
@@ -8,12 +7,26 @@ export async function loadComponent(path, containerId) {
   const html = await response.text();
 
   container.innerHTML = html;
+
+  attachCloseModal();
 }
 
 export function closeModal() {
   const modalContainer = document.getElementById("modalContainer");
 
-    modalContainer.innerHTML = "";
+  modalContainer.innerHTML = "";
 
-    unlockScroll()
-  }
+  unlockScroll();
+}
+
+function attachCloseModal() {
+  //Close modal button
+  const closeModalBtn = document.querySelector(".closeModalBtn");
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener("click", () => {
+        closeModal();
+      });
+    }
+}
+

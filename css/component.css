@@ -13,7 +13,7 @@
   gap: 15px;
   margin: auto;
   padding: 20px;
-  width: 100%;
+  width: 95%;
   max-width: 500px;
   border-radius: 8px;
 }
@@ -302,6 +302,12 @@ summary {
   transition: 0.3s;
   border: none;
 }
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
 #toggleInputContainer {
   margin-top: 10px;
 }
@@ -355,7 +361,9 @@ summary {
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px) brightness(90%);
 }
-
+.modalContainer form {
+  z-index: 9999;
+}
 .modalContainer form select option {
   background: var(--bg);
 }

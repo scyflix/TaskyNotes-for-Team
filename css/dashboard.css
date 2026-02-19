@@ -6,7 +6,10 @@ body {
   text-align: center;
   border-radius: var(--radius);
 }
-
+h2 {
+  text-align: left;
+  padding-left: 10px;
+}
 .sidebarNav {
   display: flex;
   flex-direction: column;

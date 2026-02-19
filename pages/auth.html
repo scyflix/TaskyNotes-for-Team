@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Auth | LogHue</title>
+
+   <!--CSS LINKS-->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/component.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
+</head>
+<body>
+  
+    <main class="main">
+     
+      <!--LOGIN FORM-->
+      <form class="form" id="LoginForm">
+         <h2>Login</h2>
+         <label for="userLoginEmailInput">Email</label>
+         <input type="email" name="userLoginEmailInput" id="userLoginEmailInput" class="inputField" placeholder="e.g. example@gmail.com" required>
+         <label for="userLoginPasswordInput">Password</label>
+         <input type="password" name="userLoginPasswordInput" id="userLoginPasswordInput" class="inputField" placeholder="Your account password" required>
+         <button class="btn btn-primary" id="loginBtn">Login</button>
+         <p class="commonPlaceholderText show">New user? <a href="#signupFrom">Create account</a></p>
+      </form>
+
+
+      <!--SIGNUP FORM-->
+       <form class="form" id="LoginForm">
+         <h2>Signup</h2>
+         <label for="userSignupNameInput">Full Name</label>
+         <input type="email" name="userSignupNameInput" id="userSignupNameInput" class="inputField" placeholder="e.g. Abdulroqib Oladipo" required>
+         <label for="userSignupEmailInput">Email</label>
+         <input type="email" name="userSignupEmailInput" id="userSignupEmailInput" class="inputField" placeholder="e.g. example@gmail.com" required>
+         <label for="userSignupPasswordInput">Password</label>
+         <input type="password" name="userSignupPasswordInput" id="userSignupPasswordInput" class="inputField" placeholder="Create a password for your account" required>
+                  <label for="userSignupConfirmPasswordInput">Confirm Password</label>
+         <input type="password" name="userSignupConfirmPasswordInput" id="userSignupConfirmPasswordInput" class="inputField" placeholder="Confirm your password" required>
+         <button class="btn btn-primary" id="signupBtn">Login</button>
+         <p class="commonPlaceholderText show">Have an account? <a href="#loginForm">Login</a></p>
+      </form>
+    </main>
+
+        <script type="module" src="../js/app.js"></script>
+</body>
+</html>

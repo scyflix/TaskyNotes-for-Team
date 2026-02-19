@@ -2,16 +2,20 @@
 .form {
   background-color: var(--form-bg);
   border: 1px solid var(--accent);
-  border-radius: 8px;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
+  background: var(--form-bg);
+  border-radius: var(--radius);
+
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px 5px;
   position: relative;
+
+  gap: 15px;
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
 }
 
 /*FORM LABEL*/
@@ -269,7 +273,7 @@ summary {
   transform: translateY(-6px);
 }
 
-.placeholderText {
+.placeholderText, .commonPlaceholderText {
   text-align: center;
   opacity: 0.6;
   margin-top: 20px;
@@ -316,6 +320,7 @@ summary {
 .btn:active {
   color: var(--bg);
 }
+
 .btnDisabled:disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -350,20 +355,7 @@ summary {
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px) brightness(90%);
 }
-.modalContainer h2 {
-  text-align: center;
-}
-.modalContainer form {
-  background: var(--form-bg);
-  padding: 20px;
-  border-radius: var(--radius);
-  max-width: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 0 15px;
-}
+
 .modalContainer form select option {
   background: var(--bg);
 }

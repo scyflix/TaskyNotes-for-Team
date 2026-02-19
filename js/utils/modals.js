@@ -1,6 +1,15 @@
 import { loadComponent, closeModal } from "../ui.js";
 import {initWorkspaces} from "../features/workspaceData.js"
 
+function attachCloseModal() {
+  //Close modal button
+  const closeModalBtn = document.querySelector(".closeModalBtn");
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+      closeModal();
+    });
+  }
+}
 
 function lockScroll() {
   const main = document.querySelector(".mainContent");
@@ -25,13 +34,8 @@ export function openCreateTaskModal() {
         "modalContainer",
       );
 
-      //Close modal button
-      const closeModalBtn = document.querySelector(".closeModalBtn");
-      if (closeModalBtn) {
-        closeModalBtn.addEventListener("click", () => {
-          closeModal();
-        });
-      }
+      //Close modal 
+      attachCloseModal()
     });
   }
 }
@@ -47,13 +51,8 @@ export function openLogTaskModal() {
         "modalContainer",
       );
 
-      //Close modal button
-      const closeModalBtn = document.querySelector(".closeModalBtn");
-      if (closeModalBtn) {
-        closeModalBtn.addEventListener("click", () => {
-          closeModal();
-        });
-      }
+      //Close modal
+      attachCloseModal()
     });
   }
 }
@@ -66,22 +65,42 @@ export function openCreateWorkspaceModal() {
 
       await loadComponent(
         "../components/modals/create-workspace.html",
-        "modalContainer",
+        "modalContainer"
       );
 
       initWorkspaces();
 
-      //Close modal button
-      const closeModalBtn = document.querySelector(".closeModalBtn");
-      if(closeModalBtn) {
-        closeModalBtn.addEventListener("click", () => {
-          closeModal();
+      //Close modal
+      attachCloseModal()
     
-        });
-      }
     });
   }
-
 }
 
 
+
+function attachOpenSignupModal() {
+  const openSignupModalBtn = document.getElementById("openSignupModal")
+  if(openSignupModalBtn) {
+    openSignupModalBtn.addEventListener("click", async () => {
+        loadComponent("../components/modals/signup.html", "modalContainer");
+      });
+
+      attachCloseModal()
+  }
+}
+
+
+export function openLoginModal() {
+  const openLoginModalBtn = document.getElementById("openLoginModal")
+  if(openLoginModalBtn) {
+    openLoginModalBtn.addEventListener("click", async () => {
+
+      await loadComponent("../components/modals/login.html", "modalContainer"); 
+
+      attachOpenSignupModal()
+      attachCloseModal()
+    })
+  }
+  
+}

@@ -4,6 +4,7 @@ import {
   openCreateTaskModal,
   openLogTaskModal,
   openCreateWorkspaceModal,
+  openLoginModal
 } from "./utils/modals.js";
 import {
   attachSidebarToggle,
@@ -38,7 +39,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   openCreateTaskModal();
   openLogTaskModal();
   openCreateWorkspaceModal();
-  
+  openLoginModal();
+
   initWorkspacePage();
   initPersonalTasks();
   initWorkspaces()

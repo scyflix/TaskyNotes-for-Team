@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogHue Team Edition</title>
   <link rel="stylesheet" href="landing.css" />
+  <link rel="stylesheet" href="css/component.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/base.css">
 </head>
 
 <body>
+
+              <div  id="modalContainer">
+    </div>
+
   <header class="header">
     <div class="logo">LogHue<span>Team</span></div>
 
     <nav class="nav">
       <a href="#features">Features</a>
       <a href="#about">About</a>
-      <a href="pages/auth.html" class="btn">Get Started</a>
+      <button type="button" id="openLoginModal" class="btn">Login</button>
       <button id="themeToggle" class="theme-toggle">🌙</button>
     </nav>
   </header>
@@ -82,5 +89,6 @@
       toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
     });
   </script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

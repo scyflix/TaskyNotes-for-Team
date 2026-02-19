@@ -5,16 +5,6 @@
   box-sizing: border-box;
 }
 
-/* THEME VARIABLES */
-:root {
-     --bg: #0f1115;
-  --text: #f1f1f1;
-  --subtext: #b5b5b5;
-  --card-bg: #1a1d23;
-  --primary: #6aa8ff;
-  --shadow: 0 4px 20px rgba(0,0,0,0.4);
-
-}
 
 body.light {
   --bg: #f7f9fc;
@@ -63,6 +53,7 @@ body {
   padding: 8px 16px;
   background: var(--primary);
   color: #fff;
+  border: none;
   border-radius: 6px;
 }
 

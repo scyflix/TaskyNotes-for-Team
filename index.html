@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogHue Team Edition</title>
+
   <link rel="stylesheet" href="landing.css" />
   <link rel="stylesheet" href="css/component.css">
   <link rel="stylesheet" href="css/utilities.css">
@@ -12,83 +13,321 @@
 
 <body>
 
-              <div  id="modalContainer">
-    </div>
+  <div id="modalContainer"></div>
 
   <header class="header">
-    <div class="logo">LogHue<span>Team</span></div>
+    <div class="logo">Log<span>Hue</span></div>
 
-    <nav class="nav">
+    <nav class="nav desktop-nav">
       <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <button type="button" id="openLoginModal" class="btn">Login</button>
+      <a href="#what">What LogHue does</a>
+      <a href="#how">How it works</a>
+      <a href="#who">Who it is for</a>
+      <button type="button" id="openLoginModal" class="btn nav-login">Login</button>
       <button id="themeToggle" class="theme-toggle">🌙</button>
     </nav>
+
+    <button id="mobileMenuBtn" class="mobile-menu-btn">☰</button>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Organize Your Team.<br>
-      <span>Work Smarter Together.</span></h1>
+  <aside id="mobileSidebar" class="mobile-sidebar">
+    <button id="closeSidebar" class="close-sidebar">×</button>
 
-      <p>
-        LogHue Team Edition helps teams collaborate, manage workspaces, track tasks, and stay aligned — all in one clean, modern interface.
-      </p>
+    <a href="#features">Features</a>
+    <a href="#what">What LogHue does</a>
+    <a href="#how">How it works</a>
+    <a href="#who">Who it is for</a>
+    <button type="button" id="openLoginModalMobile" class="btn nav-login">Login</button>
+  </aside>
 
-      <a href="pages/auth.html" class="cta-btn">Start for Free</a>
-    </div>
+  <main>
 
-    <div class="hero-illustration">
-      <div class="mock-card"></div>
-      <div class="mock-card small"></div>
-      <div class="mock-card tiny"></div>
-    </div>
-  </section>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-tag">Workspace centered collaboration</p>
+          <h1>Give every team a clear place to work</h1>
 
-  <section id="features" class="features">
-    <h2>Why LogHue?</h2>
+          <p class="hero-text">
+            LogHue lets teams create workspaces, assign tasks, log what was done, and review progress in a calm and focused environment.
+          </p>
 
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Collaborative Workspaces</h3>
-        <p>Create, manage, and organize team workspaces with ease.</p>
+          <div class="hero-actions">
+            <a href="pages/auth.html" class="cta-btn">Create your account</a>
+            <a href="#what" class="secondary-btn">See what you can do</a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="hero-pill">Workspaces with clear tasks</div>
+            <div class="hero-pill">Logs with notes and dates</div>
+            <div class="hero-pill">Admins review and close work</div>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <div class="mock-shell">
+            <div class="mock-sidebar">
+              <div class="mock-logo"></div>
+              <div class="mock-nav-item active"></div>
+              <div class="mock-nav-item"></div>
+              <div class="mock-nav-item"></div>
+              <div class="mock-nav-item"></div>
+              <div class="mock-nav-footer"></div>
+            </div>
+            <div class="mock-main">
+              <div class="mock-topbar">
+                <div class="mock-title"></div>
+                <div class="mock-user"></div>
+              </div>
+
+              <div class="mock-stats-row">
+                <div class="mock-stat-card"></div>
+                <div class="mock-stat-card"></div>
+                <div class="mock-stat-card"></div>
+                <div class="mock-stat-card"></div>
+              </div>
+
+              <div class="mock-section-title"></div>
+
+              <div class="mock-workspace-list">
+                <div class="mock-workspace-card">
+                  <div class="mock-workspace-main">
+                    <div class="mock-workspace-name"></div>
+                    <div class="mock-workspace-meta"></div>
+                  </div>
+                  <div class="mock-workspace-actions">
+                    <div class="mock-chip"></div>
+                    <div class="mock-chip primary"></div>
+                  </div>
+                </div>
+
+                <div class="mock-workspace-card">
+                  <div class="mock-workspace-main">
+                    <div class="mock-workspace-name"></div>
+                    <div class="mock-workspace-meta"></div>
+                  </div>
+                  <div class="mock-workspace-actions">
+                    <div class="mock-chip"></div>
+                    <div class="mock-chip primary"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="feature-card">
-        <h3>Task Tracking</h3>
-        <p>Log tasks, track progress, and keep everyone aligned.</p>
+    <section id="features" class="section features">
+      <div class="section-inner">
+        <h2>Why teams choose LogHue</h2>
+        <p class="section-lead">
+          LogHue gives structure to the way work moves from idea to completion, without adding noise or clutter.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Workspace centered</h3>
+            <p>Create focused spaces for teams, projects, or departments and keep tasks, logs, and members together.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Task and progress tracking</h3>
+            <p>Assign tasks, log what was done, add notes and dates, and see what is in progress or complete.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Clear roles</h3>
+            <p>Admins guide the work, members focus on doing the work, and everyone sees what matters to them.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Calm and modern design</h3>
+            <p>A dark, focused interface that feels familiar and stays out of the way of real work.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="feature-card">
-        <h3>Team Management</h3>
-        <p>Add members using email and manage roles effortlessly.</p>
+    <section id="what" class="section what">
+      <div class="section-inner">
+        <h2>What you can do with LogHue</h2>
+
+        <div class="what-grid">
+          <div class="what-item">
+            <h3>Create workspaces</h3>
+            <p>Set up a workspace for each team or project and keep tasks, logs, and members in one place.</p>
+          </div>
+
+          <div class="what-item">
+            <h3>Assign tasks with clarity</h3>
+            <p>Give people clear tasks with context so they know what to do and where to log their work.</p>
+          </div>
+
+          <div class="what-item">
+            <h3>Log real work</h3>
+            <p>Team members record what they did, add notes, choose a date, and mark progress as in progress or complete.</p>
+          </div>
+
+          <div class="what-item">
+            <h3>Review and comment</h3>
+            <p>Admins read logs, leave comments, and guide the work without constant calls or messages.</p>
+          </div>
+
+          <div class="what-item">
+            <h3>Track progress</h3>
+            <p>See which tasks are active, which are waiting, and which are done across all workspaces.</p>
+          </div>
+
+          <div class="what-item">
+            <h3>Close tasks with confidence</h3>
+            <p>When the work is complete, admins close the task so everyone knows it is finished.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="feature-card">
-        <h3>Clean & Modern UI</h3>
-        <p>A distraction‑free interface designed for productivity.</p>
+    <section id="how" class="section how">
+      <div class="section-inner">
+        <h2>How LogHue fits into a workday</h2>
+
+        <div class="how-steps">
+          <div class="how-step">
+            <span class="step-number">1</span>
+            <h3>Create a workspace</h3>
+            <p>Sign in and create a workspace for a team, project, or group.</p>
+          </div>
+
+          <div class="how-step">
+            <span class="step-number">2</span>
+            <h3>Add your team</h3>
+            <p>Invite people by email and give them the right role for their work.</p>
+          </div>
+
+          <div class="how-step">
+            <span class="step-number">3</span>
+            <h3>Assign tasks</h3>
+            <p>Create tasks with clear intent and assign them to the right people.</p>
+          </div>
+
+          <div class="how-step">
+            <span class="step-number">4</span>
+            <h3>Log what was done</h3>
+            <p>Members log their work with notes, dates, and progress state.</p>
+          </div>
+
+          <div class="how-step">
+            <span class="step-number">5</span>
+            <h3>Review and respond</h3>
+            <p>Admins review logs, leave comments, and guide the next steps.</p>
+          </div>
+
+          <div class="how-step">
+            <span class="step-number">6</span>
+            <h3>Close the task</h3>
+            <p>When the work is complete, the task is closed and the team moves on.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="about">
-    <h2>Built for Teams of All Sizes</h2>
-    <p>
-      Whether you're a startup, a school project group, or a growing company, LogHue Team Edition gives you the tools to stay organized and work efficiently.
-    </p>
-  </section>
+    <section id="who" class="section who">
+      <div class="section-inner">
+        <h2>Who LogHue is for</h2>
+
+        <div class="who-grid">
+          <div class="who-card">
+            <h3>Teams in growing companies</h3>
+            <p>Give each team a clear workspace where tasks, logs, and progress live together.</p>
+          </div>
+
+          <div class="who-card">
+            <h3>Managers who want clarity</h3>
+            <p>See what is happening without chasing updates or asking for reports.</p>
+          </div>
+
+          <div class="who-card">
+            <h3>People who do the work</h3>
+            <p>Know what to do, where to log it, and when it is considered complete.</p>
+          </div>
+
+          <div class="who-card">
+            <h3>Small groups that need structure</h3>
+            <p>Keep tasks and progress in one place instead of scattered across chats.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section example">
+      <div class="section-inner example-inner">
+        <div class="example-text">
+          <h2>See a day in a LogHue workspace</h2>
+          <p>
+            A design team has a workspace. The lead creates a task for a new landing page. A designer logs what they did, adds notes, and marks the work as in progress. The lead reviews the log, leaves a comment, and the designer continues. When the page is ready, the lead closes the task and the team moves on with a clear record of what happened.
+          </p>
+        </div>
+        <div class="example-card">
+          <div class="example-row">
+            <span class="example-label">Workspace</span>
+            <span class="example-value">Design team</span>
+          </div>
+          <div class="example-row">
+            <span class="example-label">Task</span>
+            <span class="example-value">New landing page</span>
+          </div>
+          <div class="example-row">
+            <span class="example-label">Member log</span>
+            <span class="example-value">Worked on layout and responsive states</span>
+          </div>
+          <div class="example-row">
+            <span class="example-label">Admin comment</span>
+            <span class="example-value">Looks good, continue with content section</span>
+          </div>
+          <div class="example-row">
+            <span class="example-label">State</span>
+            <span class="example-value">Completed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="footer">
     <p>© 2026 LogHue Team Edition. All rights reserved.</p>
   </footer>
 
   <script>
-    const toggle = document.getElementById("themeToggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      themeToggle.textContent = isDark ? "☀️" : "🌙";
     });
   </script>
+
+  <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileSidebar.classList.add("open");
+    });
+
+    closeSidebar.addEventListener("click", () => {
+      mobileSidebar.classList.remove("open");
+    });
+
+    mobileSidebar.addEventListener("click", (event) => {
+      if (event.target.tagName === "A" || event.target.classList.contains("btn")) {
+        mobileSidebar.classList.remove("open");
+      }
+    });
+  </script>
+
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

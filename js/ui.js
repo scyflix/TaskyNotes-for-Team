@@ -16,7 +16,6 @@ export function closeModal() {
 
   modalContainer.innerHTML = "";
 
-  unlockScroll();
 }
 
 function attachCloseModal() {

@@ -87,3 +87,15 @@ export function openLoginModal() {
     })
   }  
 }
+export function openLoginModalMobile() {
+  const openLoginModalMobile = document.getElementById("openLoginModalMobile")
+
+  if(openLoginModalMobile) {
+
+    openLoginModalMobile.addEventListener("click", async () => {
+      await loadComponent("components/modals/login.html", "modalContainer"); 
+      attachLoginModalEvents()
+      
+    })
+  }
+}

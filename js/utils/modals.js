@@ -54,7 +54,7 @@ function attachLoginModalEvents() {
      if (openSignupModalBtn) {
        openSignupModalBtn.addEventListener("click", async () => {
          await loadComponent(
-           "../components/modals/signup.html",
+           "components/modals/signup.html",
            "modalContainer",
          );
 
@@ -66,7 +66,7 @@ function attachSignupModalEvents() {
  const openLoginModal = document.getElementById("openLoginModal");
  if (openLoginModal) {
    openLoginModal.addEventListener("click", async () => {
-     await loadComponent("../components/modals/login.html", "modalContainer");
+     await loadComponent("components/modals/login.html", "modalContainer");
 
      attachLoginModalEvents()
     });
@@ -80,7 +80,7 @@ export function openLoginModal() {
   if(openLoginModalBtn) {
     openLoginModalBtn.addEventListener("click", async () => {
 
-      await loadComponent("../components/modals/login.html", "modalContainer"); 
+      await loadComponent("components/modals/login.html", "modalContainer"); 
 
       attachLoginModalEvents()
 

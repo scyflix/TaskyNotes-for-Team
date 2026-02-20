@@ -26,6 +26,7 @@
 }
 
 .pageHeader {
+  grid-area: header;
   background: var(--header-bg);
   backdrop-filter: blur(30px);
   display: flex;

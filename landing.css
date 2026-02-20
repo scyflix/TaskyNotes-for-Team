@@ -24,7 +24,10 @@
   --space-lg: 24px;
   --space-xl: 32px;
 }
-
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   background: var(--bg);
@@ -49,9 +52,8 @@ body {
 .logo {
   font-weight: 600;
   font-size: 1.5rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
-
 .logo span {
   color: var(--primary);
 }
@@ -156,7 +158,8 @@ main {
 .hero-inner {
   display: flex;
   gap: var(--space-xl);
-  align-items: center;
+  align-items: flex-start;
+  height: 100%;
 }
 
 .hero-content {
@@ -220,6 +223,8 @@ main {
 }
 
 .hero-highlights {
+    height: 100%;
+
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
@@ -227,6 +232,8 @@ main {
 }
 
 .hero-pill {
+    height: 100%;
+
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
@@ -245,13 +252,16 @@ main {
 }
 
 .mock-shell {
-  width: 420px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  max-height: 90%;
   border-radius: 16px;
   background: var(--card-bg);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.04);
   display: flex;
+  position: relative;
   overflow: hidden;
 }
 
@@ -290,6 +300,7 @@ main {
 }
 
 .mock-main {
+
   flex: 1;
   padding: var(--space-md);
   display: flex;

@@ -11,7 +11,11 @@ import {
   attachSidebarToggle,
   personalLogInputContainerPanelToggle,
 } from "./utils/toggle.js";
-import { initWorkspacePage } from "./workspace.js";
+
+
+import { initWorkspaceData } from "./workspace.js";
+
+
 import { initPersonalTasks } from "./features/personalTasks.js";
 import {initWorkspaces} from "./features/workspaceData.js"
 import { autoExpandTextarea } from "./utils/textarea.js";
@@ -43,10 +47,14 @@ window.addEventListener("DOMContentLoaded", async () => {
   openLoginModal();
   openLoginModalMobile()
 
+  /*
   initWorkspacePage();
+  */
+
+
   initPersonalTasks();
   initWorkspaces()
-  
+  initWorkspaceData()
   personalLogInputContainerPanelToggle();
 
   autoExpandTextarea();

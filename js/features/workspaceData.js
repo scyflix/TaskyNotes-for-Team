@@ -23,7 +23,7 @@ createWorkspaceBtn = document.getElementById("createWorkspace");
       updateworkspaceCount()
       checkIfEmpty()
       attachCreateWorkspaceEvent()      
-      
+      attachOpenWorkspaceClickEvent()
      
 }
 
@@ -138,10 +138,11 @@ workspaceCard.innerHTML = `
            <summary>Description</summary>
            <p>${ws.description}</p>
            </details>
-           <button class="btn btn-sm openWorkspaceBtn">Open Workspace</button> 
+           <button class="btn btn-sm openWorkspaceBtn" data-id=${ws.id} data-role=${ws.role}>Open Workspace</button> 
 `;
 
 return workspaceCard;
+
 }
 
 
@@ -185,7 +186,22 @@ recentWorkspaces.forEach(wsData => {
 
 })
    upperDashboardContainer.prepend(header, div);
+
 }
 
 
+function attachOpenWorkspaceClickEvent() {
+  document.addEventListener("click", (e) => {
+    if(!e.target.classList.contains("openWorkspaceBtn")) return
 
+    const wsId = e.target.dataset.id
+    const role = e.target.dataset.role
+
+    if(role === "admin") {
+      window.location.href = `/pages/workspace-dashboard-admin.html?ws=${wsId}`
+    } else {
+            window.location.href = `/pages/workspace-dashboard-member.html?ws=${wsId}`;
+
+    }
+  })
+}

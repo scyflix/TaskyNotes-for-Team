@@ -1,4 +1,51 @@
+import {state} from "./data/state.js"
 
+//Get workspace url
+const params = new URLSearchParams(window.location.search)
+const workspaceId = params.get('ws')
+
+//Load data
+const workspace = state.workspaces.find(w => w.id === workspaceId)
+
+
+
+let savedWorkspaceData = []
+
+export function initWorkspaceData() {
+  const adminWorkspaceDashboardContent = document.getElementById(
+    "adminWorkspaceDashboardContent",
+  );
+  const workspaceName = document.getElementById("workspaceName")
+   
+        savedWorkspaceData = state.workspaces
+  if(workspaceName) {
+    workspaceName.innerHTML = `${workspace.name} <span class="tag">Admin</span>`;
+  }
+
+if(adminWorkspaceDashboardContent) {
+  adminWorkspaceDashboardContent.innerHTML = ""
+}
+
+
+
+loadCreatedTasks()
+loadMembers()
+loadActivities()
+}
+
+
+function loadCreatedTasks() {
+
+}
+
+function loadMembers() {
+
+}
+
+function loadActivities() {
+
+}
+/*
 const sections = {
   myTasks: `
     <section class="section">
@@ -131,6 +178,6 @@ export function loadSection(section) {
 
 export function initWorkspacePage() {
   loadSection("myTasks");
-
 }
 
+*/

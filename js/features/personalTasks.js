@@ -148,6 +148,7 @@ function attachCreateLogEvent() {
 
    personalCreatedLogs.prepend(el);
     
+   updateTaskCount()
    checkIfEmpty();
    
    requestAnimationFrame(() => {

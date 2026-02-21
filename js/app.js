@@ -13,9 +13,6 @@ import {
 } from "./utils/toggle.js";
 
 
-import { initWorkspaceData } from "./workspace.js";
-
-
 import { initPersonalTasks } from "./features/personalTasks.js";
 import {initWorkspaces} from "./features/workspaceData.js"
 import { autoExpandTextarea } from "./utils/textarea.js";
@@ -51,10 +48,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   initWorkspacePage();
   */
 
-
   initPersonalTasks();
   initWorkspaces()
-  initWorkspaceData()
   personalLogInputContainerPanelToggle();
 
   autoExpandTextarea();

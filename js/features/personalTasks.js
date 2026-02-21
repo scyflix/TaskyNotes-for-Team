@@ -99,6 +99,7 @@ function createLogElement(log) {
 /*
 const savedLogDetails = JSON.parse(localStorage.getItem("logDetails")) || [];
 */
+
 function renderExistingLogs() {
   if (personalCreatedLogs) personalCreatedLogs.innerHTML = "";
 

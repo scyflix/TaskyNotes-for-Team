@@ -8,17 +8,20 @@ const workspaceId = params.get('ws')
 const workspace = state.workspaces.find(w => w.id === workspaceId)
 
 
-
-let savedWorkspaceData = []
-
 export function initWorkspaceData() {
+  if (!workspace) return
+  
   const adminWorkspaceDashboardContent = document.getElementById(
     "adminWorkspaceDashboardContent",
   );
   const workspaceName = document.getElementById("workspaceName")
    
-        savedWorkspaceData = state.workspaces
-  if(workspaceName) {
+
+        if(workspace) {
+          document.title = workspace.name;
+        }
+
+  if(workspace && workspaceName) {
     workspaceName.innerHTML = `${workspace.name} <span class="tag">Admin</span>`;
   }
 
@@ -28,14 +31,56 @@ if(adminWorkspaceDashboardContent) {
 
 
 
-loadCreatedTasks()
+console.log("TASKS:", workspace.workspace_tasks);
+if (workspace && adminWorkspaceDashboardContent) {
+  loadCreatedTasks(
+    workspace.workspace_tasks || [],
+    adminWorkspaceDashboardContent,
+  );
+}
+
 loadMembers()
 loadActivities()
 }
 
 
-function loadCreatedTasks() {
+function loadCreatedTasks(tasks, container) {
+  const section = document.createElement("section")
+  section.classList.add("section")
+  
+  const sectionTitle = document.createElement("h2")
+  sectionTitle.classList.add("sectionTitle")
+  sectionTitle.textContent = "Created Tasks"
 
+  const divGrid = document.createElement("div");
+  divGrid.classList.add("grid")
+
+  console.log("shown")
+tasks.forEach(tsk => {
+
+const taskCard = document.createElement("div")
+taskCard.classList.add("card", "taskCard")
+
+const taskTitle = document.createElement("h3")
+taskTitle.classList.add("taskTitle")
+taskTitle.textContent = tsk.title
+
+const taskMeta = document.createElement("p")
+taskMeta.classList.add("taskMeta", "meta")
+taskMeta.textContent = `Assigned to: ${tsk.assigned_to}`
+
+const assignToMemberBtn = document.createElement("button")
+assignToMemberBtn.classList.add("btn", "btn-primary", "btn-sm", "assignToMemberBtn")
+assignToMemberBtn.textContent = "Assign to Member"
+
+taskCard.append(taskTitle, taskMeta, assignToMemberBtn)
+
+divGrid.append(taskCard)
+})
+
+
+section.append(sectionTitle, divGrid)
+container.append(section)
 }
 
 function loadMembers() {
@@ -45,7 +90,9 @@ function loadMembers() {
 function loadActivities() {
 
 }
-/*
+
+
+
 const sections = {
   myTasks: `
     <section class="section">
@@ -169,15 +216,21 @@ const sections = {
   `,
 };
 
+
+
 export function loadSection(section) {
-  const content = document.getElementById("workspaceDashboardContent");
-  if(content) {
-    content.innerHTML = sections[section] || "<p>Section not found.</p>";
+const adminWorkspaceDashboardContent = document.getElementById(
+  "adminWorkspaceDashboardContent",
+);
+  if(adminWorkspaceDashboardContent) {
+    adminWorkspaceDashboardContent.innerHTML =
+      sections[section] || "<p>Section not found.</p>";
   }
 }
 
-export function initWorkspacePage() {
-  loadSection("myTasks");
-}
+document.addEventListener("click", (e) => {
+  if(!e.target.classList.contains("navBtn")) return
 
-*/
+  const section = e.target.dataset.section
+  loadSection(section)
+})
